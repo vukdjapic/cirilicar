@@ -123,7 +123,10 @@ function _obilaziEl(el){
 function _dajAtr(cvor){   
 	var tipInputa =null;
 	if(cvor.tagName=='INPUT'){
-		tipInputa =cvor.attributes.getNamedItem('type').value;
+		tipInputa =cvor.attributes.getNamedItem('type');
+		if(tipInputa){
+			tipInputa =tipInputa.value;
+		}
 	}
 	
 	if (cvor.tagName in CIR.atrObjs){    
@@ -197,8 +200,8 @@ function prevod(tekst){
 //=======javno
 
 function cirilica(){
-	obilazakZamena(document.head,5)
-	obilazakZamena(document.body)
+	obilazakZamena(unsafeWindow.document.head,5)
+	obilazakZamena(unsafeWindow.document.body)
 }
 
 function cirilica_onload(){	
