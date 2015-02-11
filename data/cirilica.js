@@ -200,8 +200,8 @@ function prevod(tekst){
 //=======javno
 
 function cirilica(){
-	obilazakZamena(unsafeWindow.document.head,5)
-	obilazakZamena(unsafeWindow.document.body)
+	obilazakZamena(document.head,5)
+	obilazakZamena(document.body)
 }
 
 function cirilica_onload(){	
